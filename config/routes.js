@@ -8,6 +8,8 @@
  * https://sailsjs.com/anatomy/config/routes-js
  */
 
+const FileUploadController = require("../api/controllers/FileUploadController");
+
 module.exports.routes = {
 
   //  ╦ ╦╔═╗╔╗ ╔═╗╔═╗╔═╗╔═╗╔═╗
@@ -40,7 +42,6 @@ module.exports.routes = {
 // TESTING 
 // Kritika 
 // DT: 14 May
-
  // 'GET /test':               { action: 'view-test' },
  'GET /things'         :         { action: 'things/view-available-things' },
  'GET /delOneThing/:id':         { action: 'things/del-one-thing' },
@@ -48,7 +49,9 @@ module.exports.routes = {
  'GET /things/:virtualPageSlug?':     { action: 'things/view-upload-thing' },
 
 // REQUESTS
- 'POST /testAction'         :         { action: 'test-action' },
+ 'POST /testAction'        :        { action: 'test-action' },
+ 'GET /uploadFile'         :         { action: 'things/upload-photo'},
+ 
 
   //  ╔╦╗╦╔═╗╔═╗  ╦═╗╔═╗╔╦╗╦╦═╗╔═╗╔═╗╔╦╗╔═╗   ┬   ╔╦╗╔═╗╦ ╦╔╗╔╦  ╔═╗╔═╗╔╦╗╔═╗
   //  ║║║║╚═╗║    ╠╦╝║╣  ║║║╠╦╝║╣ ║   ║ ╚═╗  ┌┼─   ║║║ ║║║║║║║║  ║ ║╠═╣ ║║╚═╗
